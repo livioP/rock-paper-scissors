@@ -1,6 +1,6 @@
-let rock = document.getElementById('btn1');
-let paper = document.getElementById('btn2');
-let scissors = document.getElementById('btn3');
+let button1 = document.querySelector('#btn1');
+let button2 = document.getElementById('btn2');
+let button3 = document.getElementById('btn3');
 
 
 const x = Math.floor(Math.random() * 3);
@@ -17,4 +17,22 @@ const compChoice = getComputerChoice(x);
 console.log(compChoice);
 
 
-/*function getPlayerChoice*/
+function btn1(){
+button1.addEventListener('click', () => {
+    return 'Rock';
+});
+}
+
+button2.addEventListener('click', () => {
+    return 'Paper';
+});
+button3.addEventListener('click', () => {
+    return 'Scissors';
+});
+
+
+function myFunction(btn) {
+    const playerChoice = btn.value
+}
+
+console.log(playerChoice)
