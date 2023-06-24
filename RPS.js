@@ -5,22 +5,33 @@ let bottoni = document.querySelectorAll("button");
 let playerText = document.getElementById("playerText")
 let computerText = document.getElementById("computerText")
 let result = document.getElementById("result")
+let score = document.getElementById("punteggio");
 let playerChoice
 let compChoice
+let playerScore = 0
+let computerScore = 0
 
 
 
 
 
 /////////////////////// 
-
-bottoni.forEach(bottoni => bottoni.addEventListener("click", () => { 
-    playerChoice = bottoni.value;
-    getComputerChoice();
-    playerText.innerHTML = `Player choice:  ${playerChoice}`;
-    computerText.innerHTML = `Computer choice:  ${compChoice}`;
-    result.innerHTML = `${playRound(playerChoice, compChoice)}`;
+let round =
+    bottoni.forEach(bottoni => bottoni.addEventListener("click", () => { 
+        playerChoice = bottoni.value;
+        getComputerChoice();
+        playerText.innerHTML = `Player choice:  ${playerChoice}`;
+        computerText.innerHTML = `Computer choice:  ${compChoice}`;
+        score.innerText = `Player: ${playerScore} - Computer: ${computerScore}`;
+        result.innerHTML = `${playRound(playerChoice, compChoice)}`;
+            if (result.innerHTML === "Oh no, computer wins"){
+                return computerScore++;
+            } else if (result.innerHTML === 'You WIN!'){
+                return playerScore++;
+            } else console.log('tie')
+                  
 }))
+
 
 
 
@@ -58,4 +69,3 @@ function playRound(playerChoice, compChoice){
     return 'You WIN!'
     }
 }
-
