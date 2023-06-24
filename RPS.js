@@ -12,7 +12,7 @@ let compChoice
 
 
 
-/////////////////////// Tasti Player
+/////////////////////// 
 
 bottoni.forEach(bottoni => bottoni.addEventListener("click", () => { 
     playerChoice = bottoni.value;
@@ -21,6 +21,8 @@ bottoni.forEach(bottoni => bottoni.addEventListener("click", () => {
     computerText.innerHTML = `Computer choice:  ${compChoice}`;
     result.innerHTML = `${playRound(playerChoice, compChoice)}`;
 }))
+
+
 
 ///////////////////////////////////
 
@@ -33,7 +35,6 @@ function getComputerChoice(){
         } else 
             return compChoice = 'Scissors'
 };
-
 
 
 function playRound(playerChoice, compChoice){
@@ -57,3 +58,4 @@ function playRound(playerChoice, compChoice){
     return 'You WIN!'
     }
 }
+
