@@ -5,15 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock-paper-Scissors</title>
     <link rel="stylesheet" href="RPS.css">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,300&display=swap" rel="stylesheet">
 </head>
-<body>
-    <button id="btn1" class="button" onclick="myFunction(this)" value="Rock">Rock</button>
-    <button id="btn2"  class="button" onclick="myFunction(this)" value="Paper">Paper</button>
-    <button id="btn3"  class="button" onclick="myFunction(this)" value="Scissors">Scissors</button>
-
-
-
+<body style = "margin:0">
+    <header>
+        <h1>Rock, Paper, Scissors</h1>
+    </header>
+    <section class="sec1">
+        <h2>Prova a battere il pc</h2>
+        <h5>Istruzioni:</h5>
+        <p id="text1"> Il sasso distrugge la forbice, la forbice taglia la carta e la carta copre il sasso.<br>
+            Se entrambi i giocatori fanno la stessa mossa, allora avranno pareggiato e dovranno ripetere il round.<br>
+            Vince il primo a raggiungere 5 punti.</p>
+    </section>
+    <div class="tasti">
+        <button id="btn1" class="button" value="Rock"></button>
+        <button id="btn2"  class="button" value="Paper"></button>
+        <button id="btn3"  class="button" value="Scissors"></button>
+    </div>
+    <div class="labels">
+        <label id="lbl1" for="btn1">Rock</label>
+        <label for="btn2">Paper</label>
+        <label id="lbl3" for="btn3">Scissors</label>
+    </div>    
+    <div class="risultati1">
+        <p id="playerText"></p>
+        <p id="computerText"></p>
+    </div>
+    <div class="risultati2"> 
+        <p id="result"></p>
+    </div> 
     <script src="RPS.js"></script>   
 </body>
 </html>
