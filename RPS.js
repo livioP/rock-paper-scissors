@@ -6,6 +6,8 @@ let playerText = document.getElementById("playerText")
 let computerText = document.getElementById("computerText")
 let result = document.getElementById("result")
 let score = document.getElementById("punteggio");
+let won = document.getElementById('ending');
+let lost = document.getElementsByClassName('ending2');
 let playerChoice
 let compChoice
 let playerScore = 0;
@@ -23,7 +25,15 @@ function round(){
     bottoni.forEach(bottoni => bottoni.addEventListener("click", () => { 
     playerChoice = bottoni.value;
     getComputerChoice();
-    playRound(playerChoice, compChoice);
+    playerText.innerText = `Player choice: ${playerChoice}`;
+    computerText.innerText = `Player choice: ${compChoice}`;
+    if (playerScore < 5 && computerScore < 5){
+        playRound(playerChoice, compChoice);
+    } else if (playerScore == 5){
+        document.getElementById('ending').style.visibility = 'visible';
+    } else if (computerScore == 5){
+        document.getElementById('ending2').style.visibility = 'visible';
+    }
     score.innerText = `player: ${playerScore}, computer: ${computerScore}`
         if (risposta == 'computer wins'){
             result.innerText = 'Point for PC :('
@@ -31,19 +41,11 @@ function round(){
             result.innerText = 'Point for you!!!'
         } else if (risposta == `It's a tie!`)
         result.innerText = `It's a tie!`;
-    playerText.innerText = `Player choice: ${playerChoice}`;
-    computerText.innerText = `Player choice: ${compChoice}`;    
-
+    
 }))
 }
 
-function game(){
-    if (playerScore < 5 && computerScore < 5){
-        round();
-    }
-}
-
-game()
+round()
 ///////////////////////////////////
 
 function getComputerChoice(){
