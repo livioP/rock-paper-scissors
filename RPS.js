@@ -27,20 +27,21 @@ function round(){
     getComputerChoice();
     playerText.innerText = `Player choice: ${playerChoice}`;
     computerText.innerText = `Player choice: ${compChoice}`;
-    if (playerScore < 5 && computerScore < 5){
-        playRound(playerChoice, compChoice);
-    } else if (playerScore == 5){
-        document.getElementById('ending').style.visibility = 'visible';
-    } else if (computerScore == 5){
-        document.getElementById('ending2').style.visibility = 'visible';
-    }
     score.innerText = `player: ${playerScore}, computer: ${computerScore}`
         if (risposta == 'computer wins'){
             result.innerText = 'Point for PC :('
         } else if (risposta == 'you win'){
             result.innerText = 'Point for you!!!'
-        } else if (risposta == `It's a tie!`)
+        } else 
         result.innerText = `It's a tie!`;
+    if (playerScore < 5 && computerScore < 5){
+        playRound(playerChoice, compChoice);
+    } else if (playerScore === 5){
+        document.getElementById('ending').style.visibility = 'visible';
+    } else if (computerScore === 5){
+        document.getElementById('ending2').style.visibility = 'visible';
+    }
+    
     
 }))
 }
@@ -87,4 +88,12 @@ function playRound(playerChoice, compChoice){
     } else if (playerChoice == 'Scissors' && compChoice == 'Paper'){
     return playerScore++, risposta = 'you win';
     }
+}
+
+function reset(){
+    playerScore = 0;
+    computerScore = 0;
+    score.innerText = `player: ${playerScore}, computer: ${computerScore}`
+    document.getElementById('ending').style.visibility = 'hidden';
+    document.getElementById('ending2').style.visibility = 'hidden';
 }
