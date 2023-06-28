@@ -14,9 +14,8 @@ let computerScore = 0
 
 
 
-
 /////////////////////// 
-let round =
+function round() {
     bottoni.forEach(bottoni => bottoni.addEventListener("click", () => { 
         playerChoice = bottoni.value;
         getComputerChoice();
@@ -25,14 +24,16 @@ let round =
         score.innerText = `Player: ${playerScore} - Computer: ${computerScore}`;
         result.innerHTML = `${playRound(playerChoice, compChoice)}`;
             if (result.innerHTML === "Oh no, computer wins"){
-                return computerScore++;
+                 return computerScore++
             } else if (result.innerHTML === 'You WIN!'){
                 return playerScore++;
             } else console.log('tie')
                   
 }))
+}
 
 
+round()
 
 
 ///////////////////////////////////
